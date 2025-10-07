@@ -1,0 +1,26 @@
+@charset "utf-8";
+@use "../common/bp";
+
+#contact-thanks {
+    background-color: #e6e1dd;
+    article {
+        margin: 0 auto;
+        max-width: 160rem;
+        .wrapper {
+            h2 {
+                font-family: "EB Garamond", serif;
+                font-size: 2.6rem;
+                font-style: italic;
+                text-transform: none;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #050202;
+                margin-bottom: 10rem;
+            }
+            .mailform {
+                margin-inline: auto;
+                max-width: 110rem;
+                line-height: 2.5;
+            }
+        }
+    }
+}

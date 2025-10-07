@@ -1,0 +1,1841 @@
+@charset "utf-8";
+@use "../common/bp";
+
+// 以下、case01～04用
+#casestudy_piano {
+    /* animation */
+    .animation {
+        opacity: 0; }
+    
+    .fadein {
+        opacity: 0;
+        transition: 1s; }
+    
+    .fadein.blockIn {
+        opacity: 1; }
+    
+    .h2anime {
+        display: block;
+        opacity: 1;
+        transition: 1s;
+        overflow: hidden;
+        transform: translateY(15px); }
+    
+    .h2anime.blockIn {
+        transform: translateY(0);
+        opacity: 1; }
+    
+    .img-wrap {
+        overflow: hidden; }
+    
+    .imgzoom {
+        transition: 3s;
+        opacity: 0;
+        transform: scale(1.05); }
+    
+    .imgzoom.blockIn {
+        opacity: 1;
+        transform: scale(1) }
+    
+    li.nav_04>a {width:40px!important;}
+    
+    li.nav_10>a {
+        display: block;
+        width:40px;
+        height:50px;
+        overflow:hidden;
+        text-indent:100%;
+        white-space:nowrap;
+        background:url(../images/nav_10.png) no-repeat center;
+        background-size:100%; }
+    
+    
+    /* トップページ - コンセプト */
+    
+    .swiper-container {
+        height: 1000px!important; }
+    
+    #top_slide_2 {
+        height: 100%!important; }
+    
+    .sp-slides-container {
+        height: 100%; }
+    
+    .sp-mask {
+        height: 100%!important; }
+    
+    article.top_concept_3_02>div {
+        height: 410px!important }
+    
+    .top_concept_header {
+        margin:0;
+        display: block!important;
+        padding:50px 0; }
+    
+    .top_concept_header span {
+        position: relative;
+        display: block;
+        width:180px;
+        height:1px;
+        margin: 0 auto 20px auto;
+        position: relative; }
+    
+    .top_concept_header h2 {
+        text-align: center;
+        overflow: hidden;
+        color: #000; }
+    
+    .top_concept_header h2 img {
+        display: block;
+        width:auto;
+        height:15px;
+        margin: 0 auto 10px auto; }
+    
+    .top_concept_header h3 {
+        overflow: hidden;
+        font-family: 'Shippori Mincho B1', serif;
+        text-align: center;
+        font-size:11px;
+        line-height: 11px; }
+    
+    .top_concept_header h3 c {
+        display: inline-block; }
+    
+    .top_concept_header h3 c:nth-child(2) {transition: 1.2s;}
+    .top_concept_header h3 c:nth-child(3) {transition: 1.4s;}
+    .top_concept_header h3 c:nth-child(4) {transition: 1.6s;}
+    .top_concept_header h3 c:nth-child(5) {transition: 1.8s;}
+    .top_concept_header h3 c:nth-child(6) {transition: 2s;}
+    .top_concept_header h3 c:nth-child(7) {transition: 2.2s;}
+    
+    /* 下線アニメーション */
+    .Text-Span {
+        position: relative;
+        z-index: 1; }
+    
+    .Text-Span:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        height: 1px;
+        background: #333;
+        z-index: -1;
+        transition: all 2s; }
+    
+    .Text-Span.isActive:after {
+        transform: scale(1, 1); }
+    
+    /* トップページ お知らせ */
+    #top_info {
+        padding:50px 0!important; }
+    
+    #sub_info {
+        background-color: #F5F1EE!important;
+        padding:30px 0 100px 0!important; }
+    
+    .archive_info_wrap {
+        position: relative;
+        margin: 0 auto;
+        width:90%!important;
+        max-width:1500px!important;
+        justify-content: space-between; }
+    
+    #top_info .archive_info_wrap {
+        margin:20px auto 0 auto; }
+    
+    .archive_info_wrap {
+        display: flex!important;
+        flex-wrap: wrap; }
+    
+    #top_info>div>article,#sub_info>div>article {
+        width: 21%!important;
+        margin-left: 0!important;
+        background-color: #F5F1EE!important;
+        margin-bottom: 4%!important;
+        padding-bottom: 0!important; }
+    
+    #top_info>div>article:first-child,#sub_info>div>article:first-child{
+        width: 21%!important; }
+    
+    .archive_info_wrap:after {
+        display: block;
+        content:'';
+        width: 21%; }
+    
+    .archive_info_wrap:before {
+        content: "";
+        display: block;
+        width: 21%;  /* .boxに指定したwidthと同じ幅を指定する */
+        height: 0;
+        order: 1;  /* 疑似要素beforeの順番を必ず指定する*/ }
+    
+    #top_info>div>article>a>div,#sub_info>div>article>a>div {
+        margin-top:0!important; }
+    
+    #top_info .img-wrap,#sub_info .img-wrap {
+        margin-bottom:30px!important;
+        position: relative;
+        background-color:#f4f0ed;
+        width:100%;
+        overflow: hidden!important;
+        padding-top:60%!important; }
+    
+    #top_info .img-wrap img,#sub_info .img-wrap img {
+        transition: 1s;
+        display: block;
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        position: absolute;
+        top:0;
+        left:0; }
+    
+    #top_info a,#sub_info a {color:#000;}
+    #top_info a:hover,#sub_info a:hover {opacity: 1!important;}
+    #top_info a:hover img,#sub_info a:hover img {transform: scale(1.03);opacity: .8;}
+    
+    #top_info>div>article>a>div,#sub_info>div>article>a>div {
+        padding: 0!important;
+        height: auto!important;
+        margin:0!important; }
+    
+    #top_info>div>article>a>div:nth-child(2),#sub_info>div>article>a>div:nth-child(2) {
+        display: flex; }
+    
+    #top_info>div>article>a>h3,#sub_info>div>article>a>h3 {
+        padding:0!important;
+        font-weight: normal;
+        height: auto!important;
+        margin:5px 0 0 0!important; }
+    
+    #top_info p.tag,#sub_info p.tag {
+        font-family: 'Shippori Mincho B1', serif;
+        width: 40%!important;
+        border-right:1px #000 solid;
+        height: auto!important;
+        font-size:12px!important; }
+    
+    #top_info p.date,#sub_info p.date {
+        width:58%!important;
+        text-align: right;
+        font-size:12px!important; }
+    
+    /* トップページ - 施工例 */
+    
+    #top_works {
+        padding:50px 0 130px 0; }
+    
+    .top_works_inner {
+        position: relative;
+        width:90%;
+        margin:50px auto 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap; }
+    
+    .top_works_inner:after {
+        display: block;
+        content:'';
+        width: 23%; }
+    
+    .top_works_inner:before {
+        content: "";
+        display: block;
+        width: 23%;  /* .boxに指定したwidthと同じ幅を指定する */
+        height: 0;
+        order: 1;  /* 疑似要素beforeの順番を必ず指定する*/ }
+    
+    .top_works_inner a {
+        display: block;
+        width:23%;
+        margin-bottom:4%; }
+    
+    .top_works_inner a p {
+        color:#333;
+        font-size:13px;
+        letter-spacing: 2px;
+        margin:30px 0 0 0; }
+    
+    .top_works_inner a .img-wrap {
+        background-color:#f4f0ed;
+        position: relative;
+        overflow: hidden;
+        width:100%;
+        padding-top:65%; }
+    
+    .top_works_inner a .img-wrap img {
+        transition: 1s;
+        display: block;
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top:0;
+        left:0; }
+    
+    .top_works_inner a:hover img {
+        transform: scale(1.03);
+        opacity: .8; }
+    
+    .img-animation {
+        animation: img-opacity 1s cubic-bezier(.4, 0, .2, 1);
+        overflow: hidden;
+        position: relative; }
+    
+    .img-animation:before {
+        animation: img-animation 1s cubic-bezier(.4, 0, .2, 1) forwards;
+        background-color: #F4F0ED;
+        bottom: 0;
+        content: '';
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1; }
+    
+    @keyframes img-opacity {
+        100% { opacity: 1; }
+    }
+    
+    @keyframes img-animation {
+        100% { transform: translateX(100%); }
+    }
+    
+    /*#top_works .more {
+        transition: .5s;
+        display: block;
+        width:40%;
+        max-width:500px;
+        border:2px solid #b8967b;
+        color:#b8967b;
+        position: relative;
+        text-align: center;
+        padding:1.5% 0;
+        margin:30px auto 0 auto; }
+    
+    #top_works .more span,#top_about .more span {
+        display: block;
+        margin: 0 auto;
+        width: auto;
+        height: 10px;
+        overflow: hidden; }
+    
+    #top_works .more img,#top_about .more img,#top_works .more svg,#top_about .more svg {
+        display: block;
+        width:auto;
+        height: 100%;
+        margin: 0 auto; }*/
+    
+    .more {
+        transition: .5s;
+        display: block;
+        width:100%;
+        max-width:320px;
+        border:2px solid #b8967b;
+        color:#b8967b;
+        position: relative;
+        text-align: center;
+        padding:30px 0;
+        margin:30px auto 0 auto; }
+    
+    .more span,.more span {
+        display: block;
+        margin: 0 auto;
+        width: auto;
+        height: 10px;
+        overflow: hidden; }
+    
+    .more img,.more svg {
+        display: block;
+        width:auto;
+        height: 100%;
+        margin: 0 auto; }
+    
+    /* 既存の #top_about>a を非表示にする *//*
+    #top_about .more {
+        color: #333;
+        font-weight: bold;
+        background: #fff;
+        padding:1.5% 0;
+        box-sizing: border-box;
+        border: 2px solid #b8967b;
+        position: absolute;
+        left:0;right:0;bottom:0;
+        margin:auto;
+        z-index: 1;
+        transition: .3s;
+        width:40%;
+        max-width:500px; }
+    
+    #top_about .more::before,#top_works .more::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: #b8967b;
+        transform-origin: 100% 50%;
+        transform: scaleX(0);
+        transition: transform ease .3s; }
+    
+    #top_about .more:hover,#top_works .more:hover {
+        color: #fff; }
+    
+    #top_about .more:hover::before,#top_works .more:hover::before {
+        transform-origin: 0% 50%;
+        transform: scaleX(1); }*/
+    
+    .more::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: #b8967b;
+        transform-origin: 100% 50%;
+        transform: scaleX(0);
+        transition: transform ease .3s; }
+    
+    .more:hover {
+        color: #fff; }
+    
+    .more:hover::before {
+        transform-origin: 0% 50%;
+        transform: scaleX(1); }
+    
+    .st0_more{fill:#B8967B;}
+    /*#top_about .more:hover .st0_more,#top_works .more:hover .st0_more{fill:#fff;}*/
+    
+    .more:hover .st0_more {fill:#fff;}
+    
+    /* トップページ - ケーススタディ */
+    .top_casestudy_re {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width:90%;
+        margin: 30px auto 100px auto; }
+    
+    .top_casestudy_title {
+        width:15%; }
+    
+    .top_casestudy_contents {
+        width:75%; }
+    
+    .top_casestudy_title img {
+        display: block;
+        width:100%;
+        max-width:150px; }
+    
+    .top_casestudy_title a {
+        display: block;
+        margin:80px 0; }
+    
+    .top_casestudy_title a svg {
+        display: block;
+        width:100%;
+        max-width:60px; }
+    
+    .top_casestudy_title a p {
+        font-family: 'Shippori Mincho B1', serif;
+        color:#000;
+        margin: 20px 0 0 0;
+        letter-spacing: 2px;
+        font-size:16px; }
+    
+    .top_casestudy_title a:hover {
+        -webkit-animation:animate-svg-stroke-1 0.5s cubic-bezier(0.47,0,0.745,0.715) 0s both;
+        animation:animate-svg-stroke-1 0.5s cubic-bezier(0.47,0,0.745,0.715) 0s both }
+    
+    .top_casestudy_contents {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start; }
+    
+    .top_casestudy_contents a {
+        display: block;
+        color:#000;
+        width:100%; }
+    
+    .top_casestudy_contents a .img-wrap {
+        background-color:#f4f0ed;
+        width:100%;
+        position: relative;
+        padding-top:100%; }
+    
+    .top_casestudy_contents a .img-wrap img {
+        transition: 1s;
+        display: block;
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top:0;
+        left:0; }
+    
+    .top_casestudy_contents a:hover img {
+        transform: scale(1.03);
+        opacity: .8; }
+    
+    .top_casestudy_contents .c_tag {
+        min-height: 38px;
+        margin:30px 0 25px 0; }
+    
+    @media screen and (max-width:1200px) {
+        .top_casestudy_contents .c_tag {min-height: 65px;}
+    }
+    
+    .top_casestudy_contents .c_tag span {
+        display: inline-block;
+        margin-right:2%;
+        margin-bottom:2%;
+        border:1px solid rgba(0,0,0,.3);
+        font-family: 'Shippori Mincho B1', serif;
+        padding:1% 3%;
+        font-size:12px;
+        letter-spacing: 2px; }
+    
+    .top_casestudy_contents h4 {
+        margin:0;
+        border-bottom:1px solid #000;
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:17px;
+        line-height: 1.8;
+        padding-bottom:20px;
+        letter-spacing: 2px; }
+    
+    .top_casestudy_contents h4 br {display: none;}
+    
+    @media screen and (max-width:1500px) {
+        .top_casestudy_contents h4 {font-size:16px;}
+        .top_casestudy_contents h4 br {display: block;}
+    }
+    
+    .top_casestudy_contents strong {
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:14px;
+        line-height: 1.8;
+        min-height: 50px;
+        letter-spacing: 2px;
+        margin:20px 0 40px 0;
+        display: block; }
+    
+    .top_casestudy_contents p {
+        min-height: 150px;
+        font-weight: normal;
+        line-height: 1.8;
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:14px;
+        letter-spacing: 2px;
+        margin:20px 0;
+        display: block; }
+    
+    @media screen and (max-width:1400px) {
+        .top_casestudy_contents p {min-height: 230px;}
+    }
+    
+    .top_casestudy_contents .right {
+        display: flex;
+        justify-content: flex-end; }
+    
+    .top_casestudy_contents .right  svg {
+        display: block;
+        width:100%;
+        max-width:50px; }
+    
+    .top_casestudy_contents a:hover svg {
+        -webkit-animation:animate-svg-stroke-1 0.5s cubic-bezier(0.47,0,0.745,0.715) 0s both;
+        animation:animate-svg-stroke-1 0.5s cubic-bezier(0.47,0,0.745,0.715) 0s both }
+    
+    /* header */
+    header#main {min-width:0; }
+    
+    .loader-wrap,.sub-loader-wrap {
+        position: fixed;
+        z-index: 100000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #F4F0ED; }
+    
+    .loader-wrap img.loader1 {
+        animation: loadings1 2s;
+        opacity: 0;
+        filter: blur(3px);
+        transform: translateY(10px);
+        animation-fill-mode: forwards;
+        display: block;
+        width:auto;
+        height: 50%;
+        height: 80%;
+        max-height: 350px;
+        position: absolute;
+        top:0;left:0;right:0;bottom:0;
+        margin:auto; }
+    .loader-wrap img.loader2 {
+        animation: loadings1 2s;
+        animation-delay: 2s;
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateY(0);
+        animation-fill-mode: forwards;
+        display: block;
+        width:80%;
+        max-width:200px;
+        position: absolute;
+        top:0;left:0;right:0;bottom:0;
+        margin:auto; }
+    .sub-loader-wrap img.loader2 {
+        animation: loadings1 1.5s;
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateY(5px);
+        animation-fill-mode: forwards;
+        display: block;
+        width:80%;
+        max-width:150px;
+        position: absolute;
+        top:0;left:0;right:0;bottom:0;
+        margin:auto; }
+    
+    @keyframes loadings1 {
+        0% {opacity: 0;}
+        70% {filter: blur(0);opacity: 1;transform: translateY(0)}
+        100% {opacity: 0;transform: translateY(0)}
+    }
+    
+    
+    .main_logo {
+        position: absolute;
+        top:0;bottom:0;right:0;left:0;margin:auto;
+        z-index: 50;
+        width:50%;
+        max-width:230px; }
+    
+    
+    /*-------------------------
+    
+    slide
+    
+    -------------------------*/
+    
+    /* #slide_wrapper {
+        position: relative;
+        background-color:#000;
+        width:100%;
+        height:100vh; }
+    
+    .slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; }
+     
+    @keyframes slideshow{
+        0%{opacity:0;transform: translateX(0%)}
+        10%{opacity:1;}
+        28%{opacity:1;}
+        38%{opacity:0;}
+        100%{opacity:0;transform: translateX(-5%)}
+    }
+     
+    .slide img {
+        position: absolute;
+        top: 0;
+        bottom:0;
+        left: 0;
+        width: 110%;
+        height:100%;
+        object-fit: cover;
+        opacity: 0;
+        animation :slideshow 24s linear infinite; }
+     
+    .slide img:nth-child(2) {
+        animation-delay: 8s; }
+     
+    .slide img:last-child {
+        animation-delay: 16s; } */
+    
+    img#slide_center_logo {
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        margin:auto;
+        z-index: 5;
+        width:30%;
+        max-width:230px;
+        opacity: .7; }
+    
+    section#works_01,section#info_01 {
+        width: 100%;
+        padding-top:150px; }
+    
+    /* 施工例 詳細ページ */
+    
+    p.single_works_title {
+        z-index: 2;
+        text-align: center;
+        margin:50px 0 0 0;
+        position: relative;
+        font-family: 'Shippori Mincho B1', serif;
+        letter-spacing: 2px; }
+    
+    p.single_works_title:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right:0;
+        top:-25px;
+        margin:auto;
+        width: 100%;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        width:180px!important;
+        height: 1px;
+        background: #333;
+        z-index: -1;
+        transition: all 2s;
+        animation: sw-title 1s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.5s;
+    }
+    
+    @keyframes sw-title {
+        100% {transform: scale(1, 1);}
+    }
+    
+    #single_works {
+        position: relative;
+        width:90%;
+        max-width:1200px;
+        margin: 0 auto 300px auto; }
+    
+    #single_works:after {
+        content:'';
+        height:100px;
+        width:1px;
+        background-color:#000;
+        position: absolute;
+        bottom:-200px;
+        left:0;
+        right:0;
+        margin:auto; }
+    
+    /* #single_works .swiper-container {
+        width:100%;
+        overflow: hidden; }
+    
+    #single_works .slider {
+        background-color: #F5F1EE;
+        height: 50vmax!important;
+        max-height: 700px; }
+    
+    #single_works .slider-thumbnail {
+        margin-top:15px;
+        width:100%;
+        height: 7vmax!important; }
+    
+    #single_works .slider-thumbnail .swiper-slide {
+        background-color: #F5F1EE; }
+    
+    #single_works .swiper-slide {
+        transition: .5s;
+        width:100%;
+        height: 100%; }
+    
+    #single_works .slider img {
+        display: block;
+        width:auto;
+        max-width:100%;
+        margin: 0 auto;
+        height: 100%;
+        object-fit: cover; }
+    
+    #single_works .slider-thumbnail img {
+        display: block;
+        width:auto;
+        margin: 0 auto;
+        height: 100%;
+        object-fit: cover; } */
+    
+    .swiper-slide-thumb-active {
+        opacity: .5; }
+    
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        display: none; }/*デフォルトの矢印を非表示*/
+    
+    .swiper-button-prev,
+    .swiper-button-next {
+        transition: .5s;
+        position: static!important;
+        width: 40px!important; 
+        height: 40px!important;
+        background-size: contain!important;
+        transform: translateY(0)!important;
+        margin: 0!important;
+        background-repeat: no-repeat;
+        background-position: center; }
+    
+    .swiper-button-next {
+        margin-left:20px!important;
+        background-image: url('../images/right.svg');}
+    
+    .swiper-button-next:hover {
+        transform: translateX(5px)!important }
+    
+    .swiper-button-prev:hover {
+        transform: scale(-1, 1) translateX(5px)!important }
+    
+    .swiper-button-prev {
+        background-image: url('../images/right.svg');
+        transform: scale(-1, 1)!important; /* 左右反転 */ }
+    
+    .swiper-nav-wrap {
+        width:100%;
+        margin: 20px auto 0 auto;
+        height:40px;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center; }
+    
+    #date_box {
+        line-height: 3;
+        color:#000;
+        margin:50px 0;
+        position: relative; }
+    
+    /* ブログ一覧ページ */
+    
+    .letter_categorys {
+        display: flex;
+        justify-content: center!important;
+        margin:0 auto 80px auto!important; }
+    
+    .letter_categorys a {
+        position: relative;
+        z-index: 1;
+        transition: .5s;
+        display: block;
+        width:auto;
+        color:#777777;
+        font-size:13px;
+        letter-spacing: 2px;
+        margin: 0 20px;
+        font-family: 'Shippori Mincho B1', serif; }
+    
+    .letter_categorys a:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right:0;
+        margin:auto;
+        bottom: -3px;
+        width: 100%;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        height: 1px;
+        background: #333;
+        z-index: -1;
+        transition: all .5s; }
+    
+    .letter_categorys a:hover {
+        color:#000; }
+    
+    .letter_categorys a:hover:after {	
+        transform: scale(1, 1); }
+    
+    .letter_categorys a.select {
+        color:#000; }
+    
+    .letter_categorys a.select:after {
+        transform: scale(1, 1); }
+    
+    /* 家守について */
+    
+    section#about_01>header {
+        padding:50px 0 100px 0!important;
+        /*padding: 0 0 50px 0!important; */}
+    
+    section#about_01>header>h3 {
+        text-align: center;
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:16px;
+        letter-spacing: 3px;
+        color:#333; }
+    
+    @media screen and (max-width:1000px) {
+        section#about_01>header {margin-top:-70px;padding:0 0 60px 0!important;}
+    }
+    
+    article.about_a,article.about_b {
+        margin: 100px auto!important;
+        justify-content: space-between; }
+    
+    article.about_a>div {
+        margin-left: 0!important; }
+    
+    article.about_a>div.img-wrap>img {
+        display: block;
+        width:100%; }
+    
+    article.about_a>div,article.about_b>div {
+        width: 45%!important; }
+    
+    article.about_b>div.img-wrap>img {
+        display: block;
+        width:100%; }
+    
+    section#about_01 br.sp {display: none;}
+    
+    section#about_01 table {
+        font-family: 'Shippori Mincho B1', serif;
+        margin:40px 0; }
+    
+    section#about_01 table th {
+        font-size:30px;
+        font-weight: bold;
+        width:50px;
+        text-align: left;
+        vertical-align: top;
+        line-height: 1.3; }
+    
+    section#about_01 table td {
+        font-size:20px;
+        letter-spacing: 2px;
+        line-height: 2; }
+    
+    section#about_01 table td span {
+        display: inline-block;
+        margin:0 -3px; }
+    
+    .aboutfont {
+        transition: 1s;
+        opacity: 0;
+        transform: translate3d(-10px,10px,10px) }
+    
+    .aboutfont.blockIn {
+        opacity: 1;transform: translate3d(0,0,0) }
+    
+    .aboutfont:nth-child(2) {transition: 1.3s;}
+    .aboutfont:nth-child(3) {transition: 1.6s;}
+    .aboutfont:nth-child(4) {transition: 1.9s;}
+    .aboutfont:nth-child(5) {transition: 2.1s;}
+    .aboutfont:nth-child(6) {transition: 2.4s;}
+    .aboutfont:nth-child(7) {transition: 2.7s;}
+    .aboutfont:nth-child(8) {transition: 3s;}
+    .aboutfont:nth-child(9) {transition: 3.3s;}
+    .aboutfont:nth-child(10) {transition: 3.6s;}
+    .aboutfont:nth-child(11) {transition: 3.9s;}
+    .aboutfont:nth-child(12) {transition: 4.2s;}
+    .aboutfont:nth-child(13) {transition: 4.4s;}
+    .aboutfont:nth-child(14) {transition: 4.6s;}
+    .aboutfont:nth-child(15) {transition: 4.8s;}
+    .aboutfont:nth-child(16) {transition: 5s;}
+    .aboutfont:nth-child(17) {transition: 5.2s;}
+    .aboutfont:nth-child(18) {transition: 5.4s;}
+    .aboutfont:nth-child(19) {transition: 5.6s;}
+    .aboutfont:nth-child(20) {transition: 5.8s;}
+    .aboutfont:nth-child(21) {transition: 6s;}
+    .aboutfont:nth-child(22) {transition: 6.2s;}
+    .aboutfont:nth-child(23) {transition: 6.4s;}
+    .aboutfont:nth-child(24) {transition: 6.6s;}
+    .aboutfont:nth-child(25) {transition: 6.8s;}
+    .aboutfont:nth-child(26) {transition: 7s;}
+    
+    section#about_02 {
+        padding: 100px 0!important; }
+    
+    section#about_02 h2 {
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:14px!important;
+        line-height: 1.8; }
+    
+    section#about_02 p {
+        text-align: justify; }
+    
+    section#about_03 {
+        padding: 50px 0 100px 0!important; }
+    
+    section#about_03>div {
+        width:80%!important;
+        max-width: 1000px;
+        margin: 0 auto!important; }
+    
+    section#about_04 {
+        padding: 50px 0 100px 0!important; }
+    
+    section#about_04>div:nth-child(2) {
+        width: 80%!important;
+        max-width:1000px;
+        margin: 0 auto!important; }
+    
+    section#about_04 .img-wrap {
+        margin:0;
+        width: 20%!important; }
+    
+    section#about_04 .img-wrap img {
+        display: block;
+        width:100%; }
+    
+    section#about_05>article {
+        padding: 100px 0!important; }
+    
+    section#about_05>article>div {
+        max-width:1000px;
+        margin: 80px auto 0 auto!important; }
+    
+    section#about_05 dt {
+        font-family: 'Shippori Mincho B1', serif;
+        letter-spacing: 2px;
+        font-weight: bold; }
+    
+    /* サブページ - ケーススタディ */
+    section#casestudy_01>div#casestudymain>h1 {	background:url("../images/neijitsu.svg")no-repeat center!important;}
+    
+    .casestudy_header {
+        position: relative;
+        z-index: 1;
+        background-color: #F5F1EE;
+        width: 100%;
+        height: auto;
+        padding: 30px 0 50px 0; }
+    
+    .casestudy_header .number {
+        font-size:20px;
+        letter-spacing: 4px;
+        text-align: center;
+        font-weight: bold;
+        display: block;
+        margin:20px 0; }
+    
+    .casestudy_header strong {
+        display: block;
+        text-align: center;
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:17px;
+        letter-spacing: 3px; }
+    
+    .casestudy_header min {
+        display: block;
+        text-align: center;
+        font-family: 'Shippori Mincho B1', serif;
+        margin-top:20px; }
+    
+    article.casestudy_02_01 {
+        margin:100px 0; }
+    
+    article.casestudy_02_01>div {
+        flex-wrap: wrap;
+        justify-content: space-between; }
+    
+    article.casestudy_02_01>div>p {
+        width:48%!important;
+        line-height: 2!important;
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:13px; }
+    
+    article.casestudy_02_01>div>p>strong {
+        display: block;
+        font-size:15px;
+        margin:0 0 30px 0; }
+    
+    article.casestudy_02_01 .images {
+        width:45%;
+        margin-right:0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; }
+    
+    article.casestudy_02_01 .images .img-wrap {
+        width:48%; }
+    
+    article.casestudy_02_01 .images .img-wrap img {
+        display: block;
+        width:100%; }
+    
+    @media screen and (max-width:1200px) {
+        article.casestudy_02_01 .images .img-wrap:nth-child(1) {display: none;}
+        article.casestudy_02_01 .images .img-wrap:nth-child(2) {width:100%;}
+    }
+    
+    article.casestudy_02_02 {
+        margin-bottom:30px!important;
+        padding-bottom:100px!important; }
+    
+    section#casestudy_03>header>h2 {
+        text-indent: inherit!important;
+        font-family: 'Shippori Mincho B1', serif;
+        width: 100%!important;
+        height: auto!important;
+        background-image: url("http://yamori-kinoie.com/data/wp-content/themes/yamori_2019/images/casestudy_sec_03_02.png")!important;
+        background-size: contain!important;
+        background-position: right center!important;
+        letter-spacing: 3px;
+        font-size:15px;
+        padding:5px 0!important; }
+    
+    section#casestudy_03>header>h2>span {
+        font-family: 'Noto Sans JP',"Yu Gothic","YuGothic", sans-serif!important;
+        letter-spacing: 4px;
+        margin-right: 20px; }
+    
+    section#casestudy_03>article {
+        margin: 0 auto 100px auto!important;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+    
+    section#casestudy_03>article>p {
+        width: 46%!important; }
+    
+    section#casestudy_03>article>div {
+        width: 46%!important;
+        margin-left: 0!important; }
+    
+    section#casestudy_03>article>p {
+        line-height: 2.3;
+        font-size:13px;
+        text-align: justify; }
+    
+    section#casestudy_03>article>div>div {
+        margin-bottom: 30px!important;
+        align-items: center; }
+    
+    section#casestudy_03>article>div>div>dl {
+        margin-left: 8%!important;
+        padding-top: 0!important; }
+    
+    section#casestudy_03 dl {
+        font-family: 'Shippori Mincho B1', serif; }
+    
+    section#casestudy_03 dt {
+        margin-bottom:10px; }
+    
+    /* お問い合わせ */
+    section#contact>header {
+        padding: 0 0 50px 0!important; }
+    
+    section#contact>header>p {
+        margin-top:-20px!important;
+        line-height: 2; }
+    
+    section#contact>header>div:nth-child(3) {
+        width: 80%!important;
+        max-width:600px; }
+    
+    section#contact>div {
+        width: 80%!important;
+        max-width:600px; }
+    
+    section#contact input[type="text"],section#contact select,section#contact textarea {
+        border:1px solid rgba(0,0,0,.2);
+        display: block;
+        width:100%;
+        box-sizing: border-box;
+        padding:10px 5px;
+        font-family: 'Noto Sans JP',"Yu Gothic","YuGothic", sans-serif; }
+    
+    section#contact input.min {
+        display: inline-block;
+        width:25%; }
+    
+    section#contact dt {
+        width: 40%!important;
+        padding:10px 10px 10px 0; }
+    
+    section#contact dd {
+        width:60%!important; }
+    
+    section#contact .pad {
+        padding:10px 0; }
+    
+    section#contact input[type="submit"]{
+        letter-spacing: 2px;
+        font-family: 'Shippori Mincho B1', serif; }
+    
+    /* ケーススタディ　スライド */
+    .top_casestudy_title {
+        position: relative; }
+    
+    .casestudy-slider {
+        padding-bottom:80px;
+        position: relative;
+        width:100%;
+        height: auto!important; }
+    
+    .casestudy-slider:after {
+        content:'scroll';
+        font-family: 'Shippori Mincho B1', serif;
+        color:#b8967b;
+        letter-spacing: 1px;
+        position: absolute;
+        bottom:10px;
+        left:0; }
+    
+    .casestudy-slider img {
+        width:100%; }
+    
+    .swiper-pagination {
+        text-align: left!important; }
+    
+    /* ケーススタディ */
+    #casestudy_piano {
+        width:90%;
+        padding-top:200px;
+        margin: 0 auto; }
+    
+    #casestudy_piano .mainv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin:50px auto 0 auto;
+        width:90%; }
+    
+    #casestudy_piano .mainv>.img-wrap {
+        width:70%;
+        height: auto; }
+    
+    #casestudy_piano .mainv>.img-wrap>img {
+        transform: scale(1.1);
+        animation: zoomout 3s;
+        animation-delay: 1.3s;
+        animation-fill-mode: forwards;
+        object-fit: contain;
+        display: block;
+        width:100%;
+        height:auto; }
+    
+    @keyframes zoomout {
+        100% {transform: scale(1)}
+    }
+    
+    #casestudy_piano .mainv>h3 {
+        width:25%;
+        display: flex;
+        justify-content: center; }
+    
+    #casestudy_piano .mainv>h3>img {
+        display: block;
+        width:100%;
+        max-width:130px;
+        height: 350px; }
+    
+    .casestudy_content_01 {
+        width:90%;
+        max-width:800px;
+        margin: 100px auto; }
+    
+    .casestudy_content_01 p {
+        width:100%;
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:15px;
+        line-height: 2;
+        text-align: justify;
+        letter-spacing: 1px; }
+    
+    .casestudy_content_02 {
+        font-family: 'Shippori Mincho B1', serif;
+        width:90%;
+        max-width:800px;
+        margin: 100px auto; }
+    
+    .imgwrap {overflow: hidden;}
+    
+    .casestudy_content_02>.imgwrap,.casestudy_content_02>.imgwrap>img {
+        display: block;
+        width:100%; }
+    
+    .casestudy_content_02>p {
+        text-align: justify;
+        font-size:14px;
+        line-height: 1.8;
+        margin:20px 0 50px 0; }
+    
+    .casestudy_content_02 strong img {
+        display: block;
+        width:100%;
+        max-width:450px;
+        margin:50px 0 30px 0; }
+    
+    .casestudy_content_04 p {
+        width:90%;
+        max-width:700px;
+        margin:100px auto;
+        order:1;
+        font-family: 'Shippori Mincho B1', serif;
+        font-size:15px;
+        line-height: 2;
+        letter-spacing: 1px;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        height: 385px; }
+    
+    .casestudy_content_data {
+        background-color:#e6e6e6;
+        padding:100px 0;
+        margin: 100px 0; }
+    
+    .casestudy_content_data span.sp {display: none;}
+    
+    .casestudy_content_data_inner {
+        width:90%;
+        max-width:800px;
+        margin: 0 auto; }
+    
+    .casestudy_content_data_inner h5 {
+        background-image: url("../category/casestudy/images/icon.svg");
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: top 0 right 0;
+        letter-spacing: 2px;
+        padding-bottom:20px;
+        border-bottom:1px solid #000;
+        font-size:16px;
+        line-height: 1.7;
+        font-family: 'Shippori Mincho B1', serif; }
+    
+    .casestudy_content_data_inner h5 span {
+        font-family: 'Noto Sans JP',"Yu Gothic","YuGothic", sans-serif;
+        display: inline-block;
+        margin-right:30px; }
+    
+    .casestudy_content_data_inner h5 br {display: none;}
+    
+    .casestudy_content_data_box {
+        padding:30px 0 0 0;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap; }
+    
+    .casestudy_content_data_box img.dataimg {
+        margin-bottom:30px;
+        display: block;
+        width:100%; }
+    
+    .casestudy_content_data_box div {
+        width:47%;
+        line-height: 2;
+        text-align: justify; }
+    
+    .casestudy_content_data_box div img {
+        display: block;
+        width:40%; }
+    
+    .casestudy_content_data_box div:nth-child(1) strong {
+        display: block;
+        font-size:14px;
+        margin:25px 0 0 0;
+        font-family: 'Shippori Mincho B1', serif; }
+    
+    .two-image,.three-image,.three-image2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; }
+    
+    .two-image>.imgwrap,.three-image2>div {
+        width:49%;
+        height: auto; }
+    
+    .three-image>.imgwrap {
+        width:32%;
+        height: auto; }
+    
+    .two-image>.imgwrap>img,.three-image>.imgwrap>img,.three-image2 img {
+        display: block;
+        width:100%; }
+    
+    .three-image2>div>div:nth-child(2) {
+        margin-top:5%; }
+    
+    /* お知らせ詳細ページ */
+    .single_blog_wrap {
+        margin: 0 auto;
+        background-color:#fff;
+        width:90%!important;
+        max-width:700px!important;
+        box-sizing: border-box;
+        padding:80px; }
+    
+    .single_blog_wrap img {
+        display: block;
+        width:100%;
+        height: auto;}
+    
+    .single_blog_wrap a {
+        color:#000;
+        text-decoration: underline; }
+    
+    .single_blog_inner div:nth-child(2) {
+        margin:20px 0; }
+    
+    .single_blog_inner h3 {
+        margin:10px 0 20px 0; }
+    
+    .single_blognav_wrap {
+        width:90%;
+        max-width:700px;
+        margin: 20px auto 0 auto;
+        display: flex;
+        justify-content: space-between; }
+    
+    #top_info nav ul,#sub_info nav ul {
+        width:90%;
+        max-width:1500px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center; }
+    
+    #top_info nav ul li,#sub_info nav ul li {
+        margin: 0 20px; }
+    
+    /* 入力内容確認 */
+    table.confirmtable {
+        margin-bottom:50px;
+        width:100%; }
+    
+    table.confirmtable tr:nth-child(1) {
+        border-top:1px solid rgba(0,0,0,.1); }
+    
+    table.confirmtable tr {
+        border-bottom:1px solid rgba(0,0,0,.1); }
+    
+    table.confirmtable th,table.confirmtable td {
+        padding:15px 0; }
+    
+    table.confirmtable th {
+        text-align: left;
+        font-weight: normal; }
+    
+    /* 送信完了 */
+    .complete {
+        line-height: 2;
+        letter-spacing: 1px; }
+    
+    .complete h2 {
+        font-family: 'Shippori Mincho B1', serif;
+        margin-bottom:10px; }
+    
+    .complete a {
+        display: block;
+        width: 200px;
+        height: 60px;
+        line-height: 60px;
+        background-color: #fff;
+        color: #B9967C;
+        text-align: center;
+        border: 1px #B9967C solid;
+        margin: 40px auto;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all  0.3s ease; }
+    
+    .complete a:hover {
+        background-color: #B9967C;
+        color: #fff;
+        border: 1px #B9967C solid; }
+    
+    .my_searchform {
+        width:90%;
+        max-width:700px;
+        margin: 0 auto 100px auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; }
+    
+    .my_searchform input[type="text"] {
+        border:none;
+        padding:10px;
+        width:40%;
+        box-sizing: border-box;
+        font-family: 'Shippori Mincho B1', serif; }
+    
+    .my_searchform select {
+        border:none;
+        padding:10px;
+        width:20%;
+        box-sizing: border-box;
+        font-family: 'Shippori Mincho B1', serif; }
+    
+    .my_searchform input[type="submit"] {
+        background-color:#000;
+        color:#fff;
+        padding:10px;
+        box-sizing: border-box;
+        width:15%;
+        font-family: 'Shippori Mincho B1', serif;
+        transition: .5s;
+        border:none; }
+    
+    .my_searchform input[type="submit"]:hover {
+        opacity: .7; }
+    
+    /* top_concept_wrapper */
+    
+    .top_concept_wrapper {
+        margin:50px 0 80px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap; }
+    
+    .top_concept_wrapper>div:nth-child(1) {
+        width:40%; }
+    
+    .top_concept_wrapper>div:nth-child(2) {
+        width:60%; }
+    
+    .top_concept_wrapper>div:nth-child(2) img {
+        display: block;
+        width: 100%;
+        height: auto; }
+    
+    .top_concept_wrapper .inner {
+        width:50%;
+        max-width:320px;
+        margin: 0 auto; }
+    
+    .top_concept_wrapper strong img {
+        width:100%;
+        max-width:290px;
+        display: block; }
+    
+    .top_concept_wrapper p {
+        margin:30px 0 50px 0;
+        font-size:13px;
+        line-height: 2;
+        letter-spacing: 1px; }
+    
+    /* タグ シングルページ */
+    .tags {
+        margin-top:30px; }
+    
+    .tags img {
+        display: inline-block;
+        width:16px;
+        transform: translateY(3px);
+        margin-right: 8px; }
+    
+    .tags a {
+        color:#333;
+        font-size:11px;
+        transition: .2s;
+        text-decoration: none;
+        background-color:#f5f1ee;
+        border-radius: 3px;
+        padding:4px 8px;
+        margin-right: 5px; }
+    
+    .tags a:hover {
+        background-color:#b8957c;
+        color:#fff!important; }
+    
+    /* タグ　アーカイブページ */
+    .tag-list {
+        width:90%;
+        max-width:1500px;
+        margin:50px auto 0 auto;
+        box-sizing: border-box;
+        padding:20px;
+        background-color:#fff; }
+    
+    .tag-list li {
+        display: inline-block;
+        margin:5px 0; }
+    
+    .tag-list li:first-child {
+        margin-bottom:10px;
+        width:100%; }
+    
+    .tag-list img {
+        display: inline-block;
+        width:16px;
+        transform: translateY(3px);
+        margin-right: 5px; }
+    
+    .tag-list a {
+        color:#333;
+        transition: .2s;
+        text-decoration: none;
+        background-color:#f5f1ee;
+        border-radius: 3px;
+        padding:5px 10px;
+        margin-right: 10px; }
+    
+    .tag-list a:hover {
+        background-color:#b8957c;
+        color:#fff!important; }
+    
+    /*==========================
+    media query
+    ===========================*/
+    
+    @media screen and (max-width:1000px) {
+        /* header */
+        header#main {height: 80px!important;z-index: 500!important;}
+        header#main>div>ul,header#main>div>a.fb_btn,header#main>div>a.insta_btn,header#main>div>a#openhouse {display: none!important;}
+        header#main>h1 {width:70px!important;height:37.5px!important;margin: 0 auto 0 5%!important;padding: 22.5px 0!important;}
+        header#main>h1>a {display: block!important;width:70px!important;height:37.5px!important;overflow:hidden!important;text-indent:100%!important;white-space:nowrap!important;background:url(../images/header_h1.png) no-repeat center!important;background-size:100%!important;}
+        /* headerここまで */
+        div#iphone_nav {display: block!important;}
+        ul.drawer-menu>li>a.fb_btn {display: block;width:60px;height:40px;overflow:hidden;text-indent:100%;white-space:nowrap;background:url(../images/nav_06.png) no-repeat center;background-size:100%;}
+        ul.drawer-menu>li>a.insta_btn {display: block;width:70px;height:40px;overflow:hidden;text-indent:100%;white-space:nowrap;background:url(../images/nav_08.png) no-repeat center;background-size:100%;}
+        .top_casestudy_title {width:40%;position: sticky;top:130px;left:0;}
+        .top_casestudy_title img {width:50%;max-width:150px;}
+        .top_casestudy_contents {width:60%;}
+        .top_casestudy_contents a {width:100%;}
+        .top_casestudy_contents a .img-wrap {padding-top:80%;}
+        .top_casestudy_contents .c_tag {margin:30px 0 20px 0;min-height: 42px;}
+        .top_casestudy_contents .c_tag span {padding:5px 10px;}
+        .top_casestudy_contents h4 br {display: none;}
+        .top_casestudy_contents p {min-height: 200px;}
+        #top_info p.tag,#sub_info p.tag { font-size:10px; }
+        #top_info p.date,#sub_info p.date { font-size:10px; }
+        section#works_01 {padding-top:0!important; }
+        section#info_01 {padding-top:30px!important; }
+        section#about_01 table {margin:0 0 20px 0;}
+        section#about_01 table th {font-size:25px;width:40px;}
+        section#about_01 table td {font-size:16px;}
+        article.casestudy_02_01 .images {width:100%;margin-bottom:60px;}
+        article.casestudy_02_01 .images .img-wrap:nth-child(1) {display: block;}
+        article.casestudy_02_01 .images .img-wrap:nth-child(2) {width:48%;}
+        article.casestudy_02_01>div>p {width: 100%!important;}
+        section#casestudy_03>article>p {font-size:10px;line-height: 1.8;margin-top:30px;width: 100%!important;order:2;}
+        section#casestudy_03>article>div {width: 100%!important;order:1;margin-left: 0!important;}
+        section#contact {padding-top: 30px!important;}
+        #casestudy_piano {padding-top:50px!important;}
+        .top_concept_wrapper>div:nth-child(1) {order:2;width:100%;}
+        .top_concept_wrapper>div:nth-child(2) {order:1;width:100%;}
+        .top_concept_wrapper {margin: 0 0 50px 0;}
+        .top_concept_wrapper .inner {width:80%;max-width:none;text-align: center;margin: 80px auto 0 auto;}
+        .top_concept_wrapper strong img {margin: 0 auto;}
+        .top_works_inner {margin: 0 auto;}
+        section#about_01>header {margin-top:-70px;padding:0 0 60px 0!important;}
+        #top_info p.date,#sub_info p.date {letter-spacing: 1px;}
+        #top_info p.tag,#sub_info p.tag {letter-spacing: 1px;}
+    }
+    
+    @media screen and (max-width:768px) {
+        .top_works_inner a {width:48%;margin-bottom:8%; }
+        #top_info>div>article,#sub_info>div>article {	width: 48%!important;margin-bottom: 8%!important; }
+        #top_info>div>article:first-child,#sub_info>div>article:first-child{ width: 48%!important; }
+        #sub_info .archive_info_wrap {margin-top:-30px!important;}
+        #top_info,#sub_info {padding:30px 0!important; }
+        #top_slide_2 {display: block!important;}
+        #top_slide_4 {display: block!important;}
+        .swiper-container {height: 870px!important;}
+        article.top_concept_1_02>div>p,article.top_concept_2_02>div>p,article.top_concept_3_02>div>p {line-height: 2!important;}
+        article.top_concept_1_01 .top_left img {margin:80px auto 0 50px!important;width:300px!important;height:262px!important;}
+        article.top_concept_1_01 .top_right img {margin:100px auto 50px auto!important;}
+        article.top_concept_2_01 .top_right img {width:240px!important;height: 264px!important;margin: 140px 50px 0 auto!important;}
+        article.top_concept_2_01 .top_left img {margin:100px auto 55px auto!important;}
+        article.top_concept_2_02>div {width:490px!important;}
+        article.top_concept_3_01 .top_left img {width:310px!important;height: 225px!important;}
+        article.top_concept_3_01 .top_left img {width: 310px!important;height: 225px!important;}
+        article.top_concept_3_01 .top_right img {margin:100px auto 76px auto!important;	}
+        article.top_concept_3_02>div {width:490px!important;}
+        .top_casestudy_title a p {margin: 15px 0 0 0;font-size:14px;}
+        .top_casestudy_re {	margin: 30px auto;}
+        #single_works .slider {	height: 40vmax!important;max-height: 400px!important; }
+        article.about_a>div,article.about_b>div {width: 100%!important;}
+        section#about_01 table {margin:40px 0 20px 0;}	
+        section#about_02>div {flex-wrap: wrap;}
+        section#about_02>div>article {width: 100%!important;margin-left: 0!important;}
+        section#about_02>div>article h2 {margin-top:50px!important;}
+        section#about_02>div>article p {margin-bottom:70px!important;}
+        section#about_02 {padding: 100px 0 30px 0!important;}
+        section#about_04 {padding: 0 0 100px 0!important; }
+        section#about_04>div:nth-child(1) {padding-top:80px!important;}
+        section#about_04>div {flex-wrap: wrap;}
+        section#about_04>div>div {width: 100%!important;margin:0!important;}
+        section#about_04 .img-wrap {width:100%!important;margin-bottom:50px!important;}
+        .casestudy-slider {padding-bottom:0;}
+        .top_casestudy_contents {padding-bottom:50px;}
+        .casestudy_content_01,.casestudy_content_02 {margin:50px auto;}
+        .casestudy_content_data {padding:50px 0;margin: 50px 0; }
+        .casestudy_content_data_box img.dataimg {width:100%;}
+        .casestudy_content_data_box div {width:100%;}
+        .casestudy_content_data_box div p {margin-bottom:20px;}	
+        .my_searchform input[type="text"] {width:40%;}
+        .my_searchform select {width:15%;}
+        .my_searchform input[type="submit"] {width:20%;}
+        section#about_01>header {margin-top:0;}
+        .single_blog_wrap {margin:-30px auto 0 auto;}
+    }
+    
+    @media screen and (max-width:570px) {
+        .top_works_inner a {margin-bottom:15%;}
+        .top_works_inner a p {margin:15px 0 0 0;font-size:12px;letter-spacing: 1px;}
+        .loader-wrap img.loader1 {height: 100%;max-height: 280px;}
+        .loader-wrap img.loader2 {max-width:150px;}
+        .sub-loader-wrap img.loader2 {max-width:100px;}
+        article.top_concept_1_02>div>p,article.top_concept_2_02>div>p,article.top_concept_3_02>div>p {-webkit-writing-mode: horizontal-tb!important;-ms-writing-mode: horizontal-tb;writing-mode: horizontal-tb!important;width:100%!important;margin:0!important;}
+        article.top_concept_1_02>div,article.top_concept_2_02>div,article.top_concept_3_02>div {display: block!important;flex-direction: row-reverse!important;margin: -150px auto 0 auto!important;width: 85%!important;}
+        article.top_concept_1_01 .top_left img {margin:50px auto 0 30px!important;width:100%!important;height:auto!important;}
+        article.top_concept_1_01 .top_right img {width:45%!important;margin:80px auto 74px auto!important;}
+        article.top_concept_2_01 .top_right img {width:80%!important;height: auto!important;margin: 80px 40px 0 auto!important;}
+        article.top_concept_2_01 .top_left img {width:45%!important;margin:80px auto!important;}	article.top_concept_2_02>div {width:85%!important;}
+        article.top_concept_3_01 .top_left img {width: 100%!important;height: auto!important;}
+        article.top_concept_3_01 .top_right img {width:33%!important;margin:80px 50px 95px auto!important;}
+        article.top_concept_3_02>div {width:85%!important;}
+        .top_casestudy_contents h4 {font-size:15px;}
+        .top_casestudy_contents strong {font-size:13px; }
+        .top_casestudy_contents p {	font-size:12px; }
+        .top_casestudy_contents .right  svg {max-width:40px; }
+        .top_casestudy_title {top:100px;}
+        article.about_a,article.about_b {margin:50px auto!important;}
+        section#about_02 {padding: 50px 0 10px 0!important;}
+        section#about_02>div>article h2 {margin-top:30px!important;}
+        section#about_02>div>article p {margin-bottom:40px!important;}
+        section#about_03 {padding: 10px 0!important; }
+        section#about_04 {padding: 0 0 50px 0!important; }
+        section#about_05>article {padding: 60px 0 50px 0!important;}
+        section#about_05>article>img {width:80%!important;}	
+        section#about_05>article>div {flex-wrap: wrap;margin:40px auto 0 auto!important;}
+        div.about_05_left {width: 100%!important;}
+        div.about_05_right {width: 100%!important;margin-left: 0%!important;}
+        section#contact dl {flex-wrap: wrap;margin-bottom:30px!important;}
+        section#contact dt {display: block;width: 100%!important;}
+        section#contact dd {display: block;width:100%!important;}
+        section#contact dt>span {display: inline-block!important;margin-left:15px!important;padding:0 5px!important;}	section#contact>header>div>a.contact_tel,section#contact>header>div>a.contact_tel:hover,section#contact>header>div>a.contact_mail,section#contact>header>div>a.contact_mail:hover {width:100%!important;height:70px!important;}
+        table.confirmtable th,table.confirmtable td {display: block;width:100%;padding:0;}
+        table.confirmtable th {padding-top:15px;font-weight: bold;padding-bottom:5px;}
+        table.confirmtable td {padding-bottom:15px;}
+        .single_blog_wrap {padding:30px;}
+        #casestudy_piano .mainv>.img-wrap {width:100%;margin-bottom:50px;margin-top:-50px!important;}
+        #casestudy_piano .mainv>h3 {width:100%;}
+        #casestudy_piano .mainv>h3>img {max-width:100px;height: 280px;}
+        .casestudy_content_01,.casestudy_content_02 {margin:30px auto;}
+        .casestudy_content_01 p {font-size:13px;}
+        .casestudy_content_02 {font-size:14px;margin: 50px auto;}
+        .casestudy_content_02>p {font-size:12px;margin:10px 0 30px 0; }	
+        .casestudy_content_data {padding:30px 0;margin: 30px 0 50px 0;}
+        .casestudy_content_data_inner h5 {background-size: 20px;padding-bottom:15px;font-size:14px;}
+        .casestudy_content_data_inner h5 span {display: block;margin-bottom:5px;}	
+        .casestudy_content_data_box div img {width:50%;}
+        .casestudy_content_data_box div {line-height: 1.7}
+        div#bnr>a:first-child span {width: 110px!important;background-position: center!important;background-size:110px!important;}
+        div#bnr>a:nth-child(2) span {width: 110px!important;background-position: center!important;background-size:110px!important;}
+        .top_concept_wrapper strong img {max-width:230px;}
+        .more {padding:20px 0;max-width:230px;margin: 0 auto 50px auto;}
+        .top_concept_wrapper {margin: 0;}
+        .top_concept_wrapper p {font-size:12px;}
+        .top_concept_wrapper .inner {margin:50px auto 0 auto}
+        section#about_05 dt {font-size:13px!important;}
+        section#about_05 dd {margin: 10px 0 30px 0!important;}
+    }
+    
+    @media screen and (max-width:480px) {
+        img#slide_center_logo {width:45%;max-width:45%; }
+        .swiper-container {height: 800px!important;}
+        article.top_concept_1_02>div,article.top_concept_2_02>div,article.top_concept_3_02>div {width:100%!important;margin: -170px auto 0 auto!important;}
+        article.top_concept_1_02>div>p,article.top_concept_2_02>div>p,article.top_concept_3_02>div>p {font-size:12px!important;}
+        article.top_concept_1_02>div>p>span,article.top_concept_2_02>div>p>span,article.top_concept_3_02>div>p>span {display: inline!important;}
+        .top_casestudy_title img {width:70%;max-width:70%; }
+        .top_casestudy_title a p {margin: 10px 0 0 0;font-size:12px;letter-spacing: 1px;}
+        .top_casestudy_title a {margin:50px 0; }
+        .top_casestudy_re {	margin: 0 auto 30px auto;}
+        #top_works {padding:50px 0; }
+        .top_casestudy_contents .c_tag span {padding:3px 8px;font-size:10px;letter-spacing: 1px; }
+        .top_casestudy_contents h4 br {display: block;}
+        #single_works {margin: 0 auto 200px auto;}
+        #single_works:after {height:80px;bottom:-130px;}	
+        #single_works .slider {	height: 30vmax!important;max-height:200px!important; }
+        #single_works .slider-thumbnail {margin-top:10px;height: 6vmax!important; }
+        .swiper-button-prev,.swiper-button-next {width: 30px!important;height: 30px!important; }
+        .swiper-button-next {margin-left:10px!important;}
+        .swiper-nav-wrap {margin: 10px auto 0 auto;height:30px; }
+        .letter_categorys {text-align: center;}
+        .letter_categorys a {display: inline-block;font-size:12px;margin: 0 10px;}
+        section#about_01 br.sp {display: block;}
+        section#about_01 table th {font-size:20px;width:30px;}
+        section#about_01 table td {font-size:14px;}
+        .footer_left>div>address {font-size:10px!important;}
+        .my_searchform {margin: 0 auto 50px auto;}
+        .my_searchform input[type="text"] {width:55%;}
+        .my_searchform select {width:20%;}
+        .my_searchform input[type="submit"] {width:100%;margin-top:3%}
+        .casestudy_content_data_inner h5 br {display: block;}
+        section#about_01>header>h3 {font-size:14px;width:80%;margin: 0 auto;text-align: left;line-height: 1.8;letter-spacing: 1px;}
+        section#about_03>div>dl {padding:15px 0!important;}
+        section#about_03>div>dl>dt {margin-bottom:5px;}
+        #top_info {padding:30px 0 50px 0!important;}
+        #top_info .archive_info_wrap {margin:0 auto; }
+        #top_info>div>article>a>div:nth-child(2),#sub_info>div>article>a>div:nth-child(2) {line-height: 1;}
+        #top_info>div>article>a>h3,#sub_info>div>article>a>h3 {font-size:12px!important;}
+        #top_info .img-wrap,#sub_info .img-wrap {margin-bottom:20px!important;}
+        .tags a {font-size:10px;padding:3px 6px!important;}
+        .tags img {width:13px;margin-right: 5px;}
+    }
+    
+    .search_results_title {
+        width:90%;
+        max-width:700px;
+        margin: 0 auto;
+        font-family: 'Shippori Mincho B1', serif;
+        border-bottom:1px solid #000;
+        font-size:20px;
+        padding-bottom:10px;
+        display: block!important; }
+    
+    .search_results_list {
+        width:90%;
+        max-width:700px!important;
+        margin: 30px auto; }
+    
+    .search_results_list li {
+        border-bottom:1px solid rgba(0,0,0,.1); }
+    
+    .search_results_list li a {
+        display: block;
+        color:#000;
+        padding:20px 0;
+        font-weight: bold;
+        transition: .5s; }
+    
+    .search_results_list a span {
+        margin-right: 20px;
+        font-weight: normal; }
+    
+    .search_results_none {
+        width:90%;
+        max-width:700px;
+        margin: 0 auto;
+        font-family: 'Shippori Mincho B1', serif; }
+    
+    /* スマホナビ修正 */
+    @media screen and (max-width:1000px) {
+        li.nav_01>a,li.nav_02>a,li.nav_03>a,li.nav_04>a,li.nav_05>a,li.nav_10>a,ul.drawer-menu>li>a.fb_btn,ul.drawer-menu>li>a.insta_btn {
+            background-image: none!important;
+            text-indent: inherit!important;
+            font-family: 'Shippori Mincho B1', serif;
+            color:#000;
+            width: 90%!important;
+            height: auto!important;
+            letter-spacing: 2px;
+            margin:20px auto; }
+        ul.drawer-menu>li>a.fb_btn,ul.drawer-menu>li>a.insta_btn {font-style: italic;}
+        ul.drawer-menu>li>a {transition: .5s;}
+        ul.drawer-menu>li>a:hover {opacity: .5;}
+    }
+}
