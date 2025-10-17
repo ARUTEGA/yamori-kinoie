@@ -1,0 +1,54 @@
+@charset "utf-8";
+@use "../common/bp";
+
+// クラシックエディタ内のtable（tablepressプラグイン）
+.tablepress-wrapper {  
+    @media screen and (max-width:780px) {
+        margin: 0 -20px 0 auto;
+        overflow-x: scroll;
+        scrollbar-color: #8A6D4C #CFCFCF;
+        width: calc(100% + 20px);
+    }
+
+    .tablepress {
+        th {
+            @media screen and (max-width:780px) {
+                min-width: 175px;
+            }
+        }
+    }
+}
+
+// クラシックエディタ内のCTA（functions.phpでショートコードを作成）
+.blog-cta {
+    border: 1px solid #333;
+    color: #333 !important;
+    display: block;
+    margin: 0 auto;
+    padding: 14px 100px 14px 50px;
+    position: relative;
+    text-decoration: none !important;
+    transition: background-color .3s ease, color .3s ease;
+    width: fit-content;
+
+    &::after {
+        background: url(../images/blog_arrow.svg) no-repeat center center/contain;
+        content: "";
+        filter: brightness(1) invert(0);
+        display: block;
+        height: 9px;
+        position: absolute;
+        right: 50px;
+        top: calc(50% - 4px);
+        transition: filter .3s ease;
+        width: 41px;
+    }
+    &:hover {
+        background: #333;
+        color: #fff !important;
+        
+        &::after {
+            filter: brightness(0) invert(1);
+        }
+    }
+}

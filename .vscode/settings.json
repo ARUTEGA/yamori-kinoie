@@ -1,0 +1,13 @@
+{
+    // live sass compile
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "./css/"
+        }
+    ],
+    "editor.tabSize": 4,
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "liveServer.settings.port": 5504
+}

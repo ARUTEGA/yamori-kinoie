@@ -245,3 +245,16 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 });*/
+
+
+// blog
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.blog__data .tablepress').forEach(function(table){
+    if (!table.parentElement.classList.contains('tablepress-wrapper')) {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'tablepress-wrapper';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
+  });
+});
