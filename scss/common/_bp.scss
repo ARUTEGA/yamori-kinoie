@@ -1,0 +1,12 @@
+@mixin pc() {
+  @media screen and (max-width: 1025px) {
+    @content;
+  }
+}
+
+// タブレット以上（600px〜）
+@mixin tab() {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}

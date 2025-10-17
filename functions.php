@@ -281,32 +281,5 @@ function redirect_custom_urls() {
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts'); */
 
-
-
-// functions.php
-function my_cta_shortcode($atts, $content = null) {
-  $atts = shortcode_atts([
-    'url'   => '#',
-    'label' => '',
-    'target'=> '',              // "_blank" なら新規タブ
-    'rel'   => '',              // "nofollow", "sponsored" など
-  ], $atts, 'cta');
-
-  $url    = esc_url($atts['url']);
-  $label  = $atts['label'] !== '' ? $atts['label'] : ($content ? $content : '詳しく見る');
-  $label  = esc_html($label);
-
-  $target_attr = ($atts['target'] === '_blank') ? ' target="_blank"' : '';
-  $rel_parts   = [];
-  if (!empty($atts['rel'])) { $rel_parts[] = $atts['rel']; }
-  if ($target_attr) { $rel_parts[] = 'noopener noreferrer'; }
-  $rel_attr = $rel_parts ? ' rel="'. esc_attr(implode(' ', $rel_parts)) .'"' : '';
-
-  $class = 'blog-cta';
-
-  return '<a class="'. esc_attr($class) .'" href="'. $url .'"'. $target_attr . $rel_attr .'>'. $label .'</a>';
-}
-add_shortcode('cta', 'my_cta_shortcode');
-
 ?>
 
