@@ -249,12 +249,41 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // blog
 document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('.blog__data .tablepress').forEach(function(table){
-    if (!table.parentElement.classList.contains('tablepress-wrapper')) {
+  // tableタグをwrapperで囲む
+  document.querySelectorAll('.blog__data table').forEach(function(table){
+    if (!table.parentElement.classList.contains('table-wrapper')) {
       var wrapper = document.createElement('div');
-      wrapper.className = 'tablepress-wrapper';
+      wrapper.className = 'table-wrapper';
       table.parentNode.insertBefore(wrapper, table);
       wrapper.appendChild(table);
+    }
+  });
+
+  // youtube埋め込みをwrapperで囲む
+  const blogData = document.querySelectorAll('.blog__data iframe');
+
+  blogData.forEach(iframe => {
+    const src = iframe.getAttribute('src');
+    // YouTubeのURLを含むか確認
+    if (src && src.includes('youtube.com')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'youtube';
+        iframe.parentNode.insertBefore(wrapper, iframe);
+        wrapper.appendChild(iframe);
+    }
+});
+
+  // ctaボタンに矢印アイコンを追加
+  const buttons = document.querySelectorAll('.su-button');
+
+  buttons.forEach(button => {
+    const span = button.querySelector('span');
+    if (span) {
+        span.insertAdjacentHTML('beforeend', `
+          <svg width="41" height="9" viewBox="0 0 41 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40.3536 4.85355C40.5488 4.65829 40.5488 4.34171 40.3536 4.14645L37.1716 0.964466C36.9763 0.769204 36.6597 0.769204 36.4645 0.964466C36.2692 1.15973 36.2692 1.47631 36.4645 1.67157L39.2929 4.5L36.4645 7.32843C36.2692 7.52369 36.2692 7.84027 36.4645 8.03553C36.6597 8.2308 36.9763 8.2308 37.1716 8.03553L40.3536 4.85355ZM0 4.5V5H40V4.5V4H0V4.5Z" fill="#333333"/>
+          </svg>
+        `);
     }
   });
 });

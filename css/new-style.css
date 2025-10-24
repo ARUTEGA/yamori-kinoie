@@ -1,15 +1,26 @@
-@media screen and (max-width: 780px) {
-  .tablepress-wrapper {
-    margin: 0 -20px 0 auto;
+@media screen and (max-width: 1100px) {
+  .table-wrapper {
     overflow-x: scroll;
-    scrollbar-color: #8A6D4C #CFCFCF;
+    padding: 0 0 1rem;
+    scrollbar-color: #e4dbd2 #CFCFCF;
+    margin: 0 -20px 0 auto;
     width: calc(100% + 20px);
   }
 }
-@media screen and (max-width: 780px) {
-  .tablepress-wrapper .tablepress th {
+@media screen and (max-width: 600px) {
+  .table-wrapper .table th {
     min-width: 175px;
   }
+}
+
+.youtube {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+.youtube iframe {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 #blog-single article .blog__data .su-button {
@@ -22,11 +33,10 @@
   opacity: 1 !important;
 }
 #blog-single article .blog__data .su-button:hover span {
-  background: #333 !important;
-  color: #fff !important;
+  background: #FAF6EF !important;
 }
-#blog-single article .blog__data .su-button:hover span::after {
-  filter: brightness(0) invert(1);
+#blog-single article .blog__data .su-button:hover span svg path {
+  fill: #AD8448;
 }
 #blog-single article .blog__data .su-button span {
   border: 1px solid #333 !important;
@@ -42,15 +52,13 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   width: fit-content;
 }
-#blog-single article .blog__data .su-button span::after {
-  background: url(../images/blog_arrow.svg) no-repeat center center/contain;
-  content: "";
-  filter: brightness(1) invert(0);
-  display: block;
-  height: 9px;
+#blog-single article .blog__data .su-button span svg {
   position: absolute;
   right: 50px;
   top: calc(50% - 4px);
   transition: filter 0.3s ease;
-  width: 41px;
+}
+#blog-single article .blog__data .su-button span svg path {
+  fill: #333;
+  transition: fill 0.3s ease;
 }/*# sourceMappingURL=new-style.css.map */
