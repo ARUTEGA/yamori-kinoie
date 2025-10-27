@@ -3,8 +3,8 @@
     overflow-x: scroll;
     padding: 0 0 1rem;
     scrollbar-color: #e4dbd2 #CFCFCF;
-    margin: 0 -20px 0 auto;
-    width: calc(100% + 20px);
+    margin: 0 0 0 auto;
+    width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
