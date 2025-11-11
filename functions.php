@@ -65,7 +65,6 @@ add_action('wp_enqueue_scripts', 'add_js');
 function add_css(){
 	// 共通CSS
     wp_enqueue_style( 'main', get_template_directory_uri() . '/css/style.css' );
-    wp_enqueue_style( 'new', get_template_directory_uri() . '/css/new-style.css' );
 	// 個別ページCSS ※'about'で設定すると管理画面の設定になってしまうので注意
 	global $post;
 	$slug = $post -> post_name;
@@ -280,6 +279,4 @@ function redirect_custom_urls() {
     ));
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts'); */
-
 ?>
-

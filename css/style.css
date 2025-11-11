@@ -266,3 +266,69 @@
 	width: auto;
 	max-width: 100%;
 }
+
+/* 20251111 追加 */
+@media screen and (max-width: 1100px) {
+  .table-wrapper {
+    overflow-x: scroll;
+    padding: 0 0 1rem;
+    scrollbar-color: #e4dbd2 #CFCFCF;
+    margin: 0 0 0 auto;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .table-wrapper .table th {
+    min-width: 175px;
+  }
+}
+
+.youtube {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+.youtube iframe {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+#blog-single article .blog__data .su-button {
+  background: none !important;
+  border: none !important;
+  margin: 0 auto;
+  width: fit-content;
+}
+#blog-single article .blog__data .su-button:hover {
+  opacity: 1 !important;
+}
+#blog-single article .blog__data .su-button:hover span {
+  background: #FAF6EF !important;
+}
+#blog-single article .blog__data .su-button:hover span svg path {
+  fill: #AD8448;
+}
+#blog-single article .blog__data .su-button span {
+  border: 1px solid #333 !important;
+  border-radius: 0 !important;
+  color: #333 !important;
+  display: block !important;
+  font-size: 15px !important;
+  line-height: normal !important;
+  margin: 0 auto;
+  padding: 19px 100px 18px 50px !important;
+  position: relative;
+  text-decoration: none !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: fit-content;
+}
+#blog-single article .blog__data .su-button span svg {
+  position: absolute;
+  right: 50px;
+  top: calc(50% - 4px);
+  transition: filter 0.3s ease;
+}
+#blog-single article .blog__data .su-button span svg path {
+  fill: #333;
+  transition: fill 0.3s ease;
+}
